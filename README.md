@@ -1,6 +1,8 @@
 # iSystemAdministrator
 ## Provision
 ![alt text](../master/assets/image/game_bwgo.png)<br>
+## Preview Slayer 0x1
+![alt text](../master/assets/image/ui_preview_slayer.gif)<br>
 ## Preview
 ![alt text](../master/assets/image/ui_preview.gif)<br>
 
