@@ -53,8 +53,12 @@ Then you will never need any command-based system knowledge to run any complex c
 Get latest source code and suggested install directory "~/bus.d"<br>
 
 ### 2.1 System Requirements
-Any Bash available system and version 3.2.57 or greater <<<#first to see external file can be linked up by using source command<br>
-Any Bash available system and version 5.0 or greater <<<#first to see hyphen and dot can be named to allocated memory<br>
+Any Bash available system and version 3.2.57 or greater<br>
+first to see external file can be linked up by using source command<br>
+<<<EOF
+Any Bash available system and version 4.2.53 or greater<br>
+first to see hyphen and dot can be named to allocated memory<br>
+<<<EOF
 
 ### 2.2 Optional Dependencies
 * awk<br>
