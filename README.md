@@ -256,9 +256,10 @@ Then will show in iSA menu and effective immediately<br>
 5.3 Web-based implementation<br>
 
 ### 5.1 Author
-LOWE/SAAU-LOON MR<br>
+Gnu.org<br>
 
-- Gnu.org [/us/en/](mailto:sysadmin@fsf.org)
+- /us/en: [@us/en](mailto:sysadmin@fsf.org)
+- /book: [@book](mailto:info@fsf.org)
 
 LOWE/SAAU-LOON MR<br>
 
