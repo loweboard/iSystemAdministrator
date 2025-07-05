@@ -256,7 +256,11 @@ Then will show in iSA menu and effective immediately<br>
 5.3 Web-based implementation<br>
 
 ### 5.1 Author
-LOWE/SAAU-LOON MR --theBoard{}+<br>
+LOWE/SAAU-LOON MR<br>
+
+- Gnu.org [/us/en/](mailto:sysadmin@fsf.org)
+
+LOWE/SAAU-LOON MR<br>
 
 - Twitter: [@loweboard](https://twitter.com/loweboard)
 - Github: [@loweboard](https://github.com/loweboard)
