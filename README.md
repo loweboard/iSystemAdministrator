@@ -3,7 +3,7 @@
 ![alt text](../master/assets/image/ui_preview.gif)<br>
 ## Preview 0x2
 ![alt text](../master/assets/image/ui_preview_slayer_0x1.gif)<br>
-## Provision
+## Vision
 ![alt text](../master/assets/image/game_bwgo.png)<br>
 
 ## Table of Contents
