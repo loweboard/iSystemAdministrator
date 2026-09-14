@@ -20,6 +20,8 @@
     - [3.1 Features](#31-features)
         - [3.1.1 Environment Command](#311-environment-command)
         - [3.1.2 Environment Command Configure Location](#312-environment-command-configure-location)
+        - [3.1.3 Global Menu Option Command](#313-global-menu-option-command)
+        - [3.1.4 Global Sitter Menu Option Command](#313-global-sitter-menu-option-command)
     - [3.2 Run Mode](#32-run-mode)
         - [3.2.1 Run as selection menu](#321-run-as-selection-menu)
         - [3.2.2 Run as selection menu with graphic](#322-run-as-selection-menu-with-graphic)
@@ -43,8 +45,8 @@ iSystemAdministrastor (iSA) made command-based system operation to be simple, qu
 What to do if you keep too many shell scripts and hard to find it out to execute or always forgot a complex command?<br>
 
 ### 1.3 How iSA better?
-iSA selection-menu available to organize/collect/execute in MVC pattern.<br>
-It stored your self-defined command or job and can be call it by selecting a numeric menu.<br>
+iSA selection-menu available to organize/collect/execute command in MVC pattern.<br>
+It stored your self-defined command or jobs and can be call it by selecting a numeric menu.<br>
 Then you will never need any command-based system knowledge to run any complex command.<br>
 
 ## 2 Installation
@@ -52,11 +54,11 @@ Get latest source code and suggested install directory "~/bus.d"<br>
 
 ### 2.1 System Requirements
 Any Bash available system and version 3.2.57 or greater<br>
-#:-first to see external file can be linked up by using source command<br>
-<<<EOF<br>
+:-first version that multiple external file can be linked up by using source command.<br>
+<br>
 Any Bash available system and version 4.2.53 or greater<br>
-#:-first to see hyphen and dot can be named to allocated memory<br>
-<<<EOF<br>
+:-first version that hyphen and dot can be named as function and/or variable to allocated memory.<br>
+<br>
 
 ### 2.2 Optional Dependencies
 * awk<br>
@@ -73,7 +75,7 @@ Any Bash available system and version 4.2.53 or greater<br>
 ```
 curl -s https://raw.githubusercontent.com/loweboard/iSystemAdministrator/master/app.iSA/local.holder.Configure.About.view.install.sh | bash
 ```
-; then restart terminal<br>
+; restart terminal needed<br>
 
 ### 2.4 Manual Install
 ```
@@ -88,11 +90,11 @@ source ~/.bash_profile
 
 ### 3.1 Features
 * Organized by MVC pattern<br>
-* Text ui and Graphic ui menu<br>
-* Infinite level submenu<br>
-* Any shell script port to iSA without coding needed (require change filename to iSA format only)<br>
-* Any shell like Zsh, BASH, Python, PHP...etc<br>
-* Each submenu has own model for self-definded variable to inherited by sub-level of menu<br>
+* Command ui and/or Textual ui and/or Graphic ui menu<br>
+* Infinite level submenu by filename format<br>
+* Any shell script port to iSA without coding needed (required change filename to iSA format only)<br>
+* Any shell like Zsh, Bash, Python, PHP...etc<br>
+* Each level of submenu has own model (*.model.sh) and that used for define variable and variable affect the level of submenu and afterwards<br>
 
 #### 3.1.1 Environment Command
 | Name                    | Type    | Description                                  |
@@ -101,35 +103,59 @@ source ~/.bash_profile
 | `isa-set--debug-off`    | boolean | turn off debug mode.                         |
 | `isa-set--verbose-on`   | boolean | show more information of command execution.  |
 | `isa-set--verbose-off`  | boolean | show less information of command execution.  |
+| `isa-cd`                | dialog  | change working directory to current iSA path.|
+| `isa-select`            | dialog  | select different holder of (*.agw.sh).       |
+| `isa` ([tab])           | dialog  | autocomplete to show up menu and submenu.    |
 
 #### 3.1.2 Environment Command Configure Location
 | Name                                           | Description                                   |
 | ---------------------------------------------- | --------------------------------------------- |
 | `local.holder.agw.sh`                          | system-wide settings saved by iSA.            |
 | `local.holder.Configure.About.view.bashrc.sh`  | per-user settings saved by the administrator. |
+| `local.sitter.agw.sh`                          | system-wide settings saved by iSA.            |
+| `local.sitter.Configure.About.view.bashrc.sh`  | per-user settings saved by the administrator. |
 | `*.Configure.About.view.bashrc.sh`             | per-user settings saved by the user.          |
 | ** Interactive Shell Terminal **               | per-session settings effective once .         |
 
-### 3.2 Run Mode
-3.2.1 Run as selection menu<br>
-3.2.2 Run as selection menu with graphic<br>
-3.2.3 Run as direct-execute command<br>
+#### 3.1.3 Global Menu Option Command
+| Name                                           | Description                                   |
+| ---------------------------------------------- | --------------------------------------------- |
+| `1) (self->bel).controller`                    | call sitter tools menu (local.sitter.agw.sh). |
+| `2) (self->dir).controller`                    | change working directory menu to previous.    |
 
-#### 3.2.1 Run as Selection Menu
+#### 3.1.4 Global Sitter Menu Option Command
+| Name                                           | Description                                   |
+| ---------------------------------------------- | --------------------------------------------- |
+| `*) (self->edit).view.*`                       | call vim to edit view file.                   |
+
+### 3.2 Run Mode
+3.2.1 Run as selection menu with command<br>
+3.2.2 Run as selection menu with textual<br>
+3.2.3 Run as direct-execute with autocomplete<br>
+
+#### 3.2.1 Run as Selection Menu with Command
 ```
 $ isa
 ```
 ![alt text](../master/assets/image/ui_preview.gif)<br>
 
-#### 3.2.2 Run as Selection Menu with Graphic
+#### 3.2.2 Run as Selection Menu with Textual
 ```
-$ isa.set-x-on
+$ isa-set--x-on
 $ isa
 ```
 ![alt text](../master/assets/image/ui_graphic_menu.gif)<br>
 
-#### 3.2.3 Run as Direct-Execute Command
+#### 3.2.3 Run as Direct-Execute with AutoComplete
 ```
+$ isa local.holder.AI.view.patrol
+```
+or
+```
+$ isa local.([tab])
+$ isa local.holder.([tab])
+$ isa local.holder.AI.([tab])
+$ isa local.holder.AI.view.([tab])
 $ isa local.holder.AI.view.patrol
 ```
 **parameter must be a view<br>
@@ -171,7 +197,7 @@ local.holder.AI.view.patrol.sh
 ```
 
 Then will show in iSA menu and effective immediately<br>
-**also you can rename your script to under any level of submenu without any coding.<br>
+**also you can rename your script to under any level of submenu without any coding needed.<br>
 
 ### 4.2 How to change submenu name?
 <b>question:</b><br>
@@ -263,7 +289,7 @@ LOWE/SAAU-LOON MR<br>
 - Github: [@loweboard](https://github.com/loweboard)
 
 ### 5.2 License
-Copyright © 2012-2015, 2024 [loweboard](https://github.com/loweboard).<br>
+Copyright © 2012-2015, 2026 [loweboard](https://github.com/loweboard).<br>
 This project is [GNU General Public License v3.0](https://github.com/loweboard/iSystemAdministrator/blob/master/LICENSE.txt) licensed.<br>
 
 ### 5.3 Web-based Implementation
