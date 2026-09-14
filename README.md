@@ -21,7 +21,7 @@
         - [3.1.1 Environment Command](#311-environment-command)
         - [3.1.2 Environment Command Configure Location](#312-environment-command-configure-location)
         - [3.1.3 Global Menu Option Command](#313-global-menu-option-command)
-        - [3.1.4 Global Sitter Menu Option Command](#313-global-sitter-menu-option-command)
+        - [3.1.4 Global Sitter Menu Option Command](#314-global-sitter-menu-option-command)
     - [3.2 Run Mode](#32-run-mode)
         - [3.2.1 Run as selection menu](#321-run-as-selection-menu)
         - [3.2.2 Run as selection menu with graphic](#322-run-as-selection-menu-with-graphic)
